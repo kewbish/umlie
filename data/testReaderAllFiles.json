@@ -1,0 +1,24 @@
+{
+  "javaInputs": [
+    {
+      "contents": "package model;\n\npublic interface Flyer {\n    public void fly();\n}\n",
+      "shortName": "flyer-interface"
+    },
+    {
+      "contents": "package model;\n\npublic class Launcher {\n    public void launch(Flyer flyer) {\n        System.out.println(\"Go fly, oh flyer!\");\n        flyer.fly();\n    }\n\n    public void refuel(Plane plane) {\n        System.out.println(\"Refueling the plane...\");\n    }\n}\n",
+      "shortName": "launcher"
+    },
+    {
+      "contents": "package ui;\n\nimport model.Flyer;\nimport model.Launcher;\nimport model.Plane;\nimport model.Seagull;\n\n// these classes are only for local testing in later phases\npublic class FlyerApp {\n    public static void main(String[] args) {\n        Launcher launcher = new Launcher();\n        Flyer plane = new Plane();\n        Flyer seagull = new Seagull();\n    }\n}\n",
+      "shortName": "flyer-app"
+    },
+    {
+      "contents": "package model;\n\npublic class Plane implements Flyer {\n    @Override\n    public void fly() {\n        System.out.println(\"Cruising at 35,000 ft...\");\n    }\n}\n",
+      "shortName": "plane-class"
+    },
+    {
+      "contents": "package model;\n\npublic class Seagull implements Flyer {\n    @Override\n    public void fly() {\n        System.out.println(\"Soaring with the wind...\");\n    }\n}\n",
+      "shortName": "seagull"
+    }
+  ]
+}
