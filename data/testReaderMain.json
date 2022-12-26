@@ -1,10 +1,13 @@
-{"javaInputs": [
+{
+  "javaInputs": [
     {
-        "contents": "package files.model;\n\npublic interface Flyer {\n    public void fly();\n}\n",
-        "shortName": "/home/kewbish/Downloads/education/cpsc210/projs/project_h4i7d/src/test/files/model/Flyer.java"
+      "contents": "package files.model;\n\npublic interface Flyer {\n    public void fly();\n}\n",
+      "shortName": "/home/kewbish/Downloads/education/projs/project_h4i7d/src/test/files/model/Flyer.java"
     },
     {
-        "contents": "package files.ui;\n\nimport files.model.Flyer;\nimport files.model.Launcher;\nimport files.model.Plane;\nimport files.model.Seagull;\n\n// these classes are only for local testing in later phases\npublic class FlyerApp {\n    public static void main(String[] args) {\n        Launcher launcher = new Launcher();\n        Flyer plane = new Plane();\n        Flyer seagull = new Seagull();\n    }\n}\n",
-        "shortName": "/home/kewbish/Downloads/education/cpsc210/projs/project_h4i7d/src/test/files/ui/FlyerApp.java"
+      "contents": "package files.ui;\n\nimport files.model.Flyer;\nimport files.model.Launcher;\nimport files.model.Plane;\nimport files.model.Seagull;\n\n// these classes are only for local testing in later phases\npublic class FlyerApp {\n    public static void main(String[] args) {\n        Launcher launcher = new Launcher();\n        Flyer plane = new Plane();\n        Flyer seagull = new Seagull();\n    }\n}\n",
+      "shortName": "/home/kewbish/Downloads/education/projs/project_h4i7d/src/test/files/ui/FlyerApp.java"
     }
-]}
+  ]
+}
+

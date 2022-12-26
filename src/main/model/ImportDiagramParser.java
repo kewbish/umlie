@@ -178,6 +178,8 @@ public class ImportDiagramParser implements Writeable {
         Map<String, List<AssociationRelation>> map = new HashMap<>();
         mapToAssociations(typeNames, fields, map);
 //        EventLog.getInstance().logEvent(new Event("All JavaInputs have been mapped to their associations."));
+        System.out.println(findFinalTypeName());
+        System.out.println(map);
         return map;
     }
 
@@ -188,11 +190,13 @@ public class ImportDiagramParser implements Writeable {
                                    Map<String, List<AssociationRelation>> map) {
         String currentTypeName = findTypeName().getName();
         for (String typeName : typeNames) {
-            if (typeName.equals(currentTypeName)) { // TODO - don't ignore if static self-referential
-                continue;
-            }
             for (FieldDeclaration field : fields) {
-                createAssociationRelationshipsForFields(fields, map, typeName, field);
+                if (typeName.contains(currentTypeName) && !field.isStatic()) {
+                    continue;
+                }
+                if (!field.isStatic()) {
+                    createAssociationRelationshipsForFields(fields, map, typeName, field);
+                }
             }
             if (currentJavaInput.getJavaContents().contains(typeName) && !map.containsKey(typeName)) {
                 AssociationRelation ar = new AssociationRelation(-1, AssociationType.DEPENDENCY);
